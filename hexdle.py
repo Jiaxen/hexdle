@@ -16,18 +16,20 @@ class Hexdle:
 
     def guess_hex(self, guess):
         ans_hex = self.answer_hex()[1:]
-        response = []
+        response = [''] * 6
         for i, v in enumerate(guess):
-            loc = ans_hex.find(v)
-            if loc >= 0:
-                if loc == i:
-                    response.append('Yes')
+            if ans_hex[i] == v:
+                response[i] = 'G'
+                guess = self.replace_index(guess, i)
+                ans_hex = self.replace_index(ans_hex, i)
+        for i, v in enumerate(guess):
+            if v != '_':
+                loc = ans_hex.find(v)
+                if loc >= 0:
+                    response[i] = 'Y'
                     ans_hex = self.replace_index(ans_hex, loc)
                 else:
-                    response.append('Misplaced')
-                    ans_hex = self.replace_index(ans_hex, loc)
-            else:
-                response.append('No')
+                    response[i] = 'R'
         self.guesses += 1
         return response
 
@@ -35,4 +37,3 @@ class Hexdle:
     def replace_index(ans_hex, loc):
         ans_hex = ans_hex[:loc] + '_' + ans_hex[loc + 1:]
         return ans_hex
-
