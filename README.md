@@ -1,5 +1,6 @@
 # Hexdle
-Another Wordle Clone, for colour hexes
+Another Wordle Clone, for colour hexes.
+Written in Python with a tkinter gui.
 
 ## Colour h..what?
 A hexadecimal color is written as #RRGGBB.
