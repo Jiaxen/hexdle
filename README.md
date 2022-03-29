@@ -12,5 +12,5 @@ See https://www.w3schools.com/colors/colors_hexadecimal.asp for more information
 Run from tkinter_gui.py
 
 ## Screenshot
-![image](https://user-images.githubusercontent.com/41369022/160447499-e6f23d83-31e4-41b3-8b42-b83705f4a38b.png)
-![image](https://user-images.githubusercontent.com/41369022/160446856-0cad1bc7-ac39-489c-b172-afcbd4742f4b.png)
+![Screenshot 2022-03-29 145331](https://user-images.githubusercontent.com/41369022/160627239-f81f0e11-d9b4-42d3-86da-a1dcca5eaf12.png)
+![Screenshot 2022-03-29 145128](https://user-images.githubusercontent.com/41369022/160627250-61033c7a-861b-43ac-b937-f2a63c1289cc.png)
