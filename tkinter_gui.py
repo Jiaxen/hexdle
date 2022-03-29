@@ -16,7 +16,7 @@ def App():
         try:
             warning['text'] = ''
             results = current_hexdle.guess_hex(guess_entry)
-            guess_results.insert(END, '\n')
+            guess_results.insert(END, '\n#')
             for i, guess_char in enumerate(guess_entry):
                 guess_results.insert(END, guess_char, results[i])
             guess_color_box['background'] = '#' + guess_entry
@@ -24,7 +24,7 @@ def App():
             warning['text'] = 'Not a valid colour'
 
     # Set up the window
-    window.minsize(width=200, height=400)
+    window.minsize(width=150, height=300)
     mainframe = ttk.Frame(window)
     mainframe.grid(column=0, row=0, sticky=(N, W, E, S))
     window.columnconfigure(0, weight=1)
@@ -43,12 +43,12 @@ def App():
     label.grid(column=1, row=0)
     label_color = ttk.Label(text='Today\'s colour:', font=('Arial', 18))
     label_color.grid(column=1, row=1)
-    color_box = ttk.Label(width=100, background=ans_colour)
-    color_box.grid(column=2, row=1)
+    color_box = ttk.Label(width=60, background=ans_colour)
+    color_box.grid(column=2, row=1, sticky=W)
     label_color = ttk.Label(text='Last guess:', font=('Arial', 18))
     label_color.grid(column=1, row=2)
-    guess_color_box = ttk.Label(width=100, background='#FFFFFF')
-    guess_color_box.grid(column=2, row=2)
+    guess_color_box = ttk.Label(width=60, background='#FFFFFF')
+    guess_color_box.grid(column=2, row=2, sticky=W)
     label_color = ttk.Label(text='Next guess:', font=('Arial', 18))
     label_color.grid(column=1, row=3)
     guess_text = StringVar()
@@ -59,7 +59,8 @@ def App():
     warning = ttk.Label(text='', font=('Arial', 18), foreground='#FF1111')
     warning.grid(column=2, row=5)
 
-    guess_results = tkinter.Text(window)
+    guess_results = tkinter.Text(window, width=10, height=10)
+    guess_results.config(font=("Courier", 30))
     guess_results.tag_configure("red", background="red")
     guess_results.tag_configure("green", background="green")
     guess_results.tag_configure("yellow", background="yellow")
